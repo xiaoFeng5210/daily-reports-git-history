@@ -1,0 +1,8 @@
+Project: icecream_scheduler
+Project: ui-next
+Project: cooknoodles
+Project: order-app
+Project: lebaiapp
+Project: nanhai-apps
+Project: ds-web-vue
+Project: drinks-admin-app
