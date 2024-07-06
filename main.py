@@ -8,12 +8,6 @@ work_dir = '/Users/xiaofeng/Documents/work/lebai'
 # 输出目录
 output_file = 'git_history.txt'
 
-
-def thread_test():
-  print('thread_test')
-  time.sleep(2)
-  print('thread_test end')
-
 def get_git_history(project_path):
   try:
     result = subprocess.run(
@@ -24,7 +18,7 @@ def get_git_history(project_path):
             text=True
           )
     if result.returncode == 0:
-        return result.stdout
+        return result.stdout.split('\n')
     else:
         return f"Error getting git history for {project_path}: {result.stderr}"
 
@@ -40,10 +34,6 @@ def main():
         f.write(f'Project: {project}\n')
         f.write(get_git_history(project_path))
         f.write('\n\n')
-
-  t = threading.Thread(target=thread_test)
-  t.start()
-  t.join()    
 
 if __name__ == '__main__':
   main()
